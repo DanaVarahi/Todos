@@ -6,17 +6,18 @@ document.addEventListener('DOMContentLoaded', () =>{
         el: "#app",
         data: {
             todos: [
-                {name: "dishes", priority: 'low'},
-                {name: "cooking", priority: 'high'},
-                {name:"walking", priority: 'low' }  
+                {name: "dishes", highPriority: false},
+                {name: "cooking", highPriority: true},
+                {name:"walking", highPriority: false}  
             ],
-            newTodo: ""
+            newTodo: "",
+            priority: ""
         },
         methods: {
             saveNewTodo: function(){
                 this.todos.push({
                     name:this.newTodo,
-                    priority: ""
+                    highPriority: this.priority == "high" 
                 })
                 this.newTodo = ""
             }
