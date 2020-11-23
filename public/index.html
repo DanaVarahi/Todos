@@ -24,10 +24,8 @@
             <input type="submit" value="Save New" id="save">
         </form>
         <ul>
-            <li v-for="todo in todos">
+            <li v-for="todo in todos" v-bind:class="todo.highPriority ? 'high' : 'low'">
                 <span>{{ todo.name }}</span>
-                <span v-if="todo.highPriority">High Priority</span>
-                <span v-else>Low Priority</span>
             </li>
         </ul>
     </div>
