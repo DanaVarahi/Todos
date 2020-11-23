@@ -9,18 +9,19 @@
 </head>
 <body>
     <div id="app">
+        <h1>ToDo's</h1>
         <form v-on:submit.prevent="saveNewTodo">
-            <label for="new-Todo">Add New Todo</label>
+            <label for="new-Todo"></label>
             <input type="text" id="new-Todo" v-model="newTodo">
             <div class='priorities'>
                 <input type="radio" id="high" name="priority" value="high">
-                <label for="high">Priority High</label>
+                <label for="high">High</label>
             </div>
             <div class='priorities'>
                 <input type="radio" id="low" name="priority" value="low">
-                <label for="low">Priority Low</label>
+                <label for="low">Low</label>
             </div>
-            <input type="submit" value="Save New Todo">
+            <input type="submit" value="Save New" id="save">
         </form>
         <ul>
             <li v-for="todo in todos">
